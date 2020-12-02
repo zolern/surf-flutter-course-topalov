@@ -119,6 +119,6 @@ class _MyHomePageState extends State<MyHomePage> {
 class MyFirstWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(child: Center(child: Text('Hello')));
   }
 }
