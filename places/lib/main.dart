@@ -117,8 +117,12 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class MyFirstWidget extends StatelessWidget {
+  int buildCounter = 0;
+
   @override
   Widget build(BuildContext context) {
+    buildCounter++;
+    print('MyFirstWidgetBuild: build ($buildCounter}');
     return Container(child: Center(child: Text('Hello')));
   }
 }
