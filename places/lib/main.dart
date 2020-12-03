@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyFirstWidget(),
+      home: MySecondWidget(),
     );
   }
 }
@@ -124,5 +124,20 @@ class MyFirstWidget extends StatelessWidget {
     buildCounter++;
     print('MyFirstWidgetBuild: build ($buildCounter}');
     return Container(child: Center(child: Text('Hello')));
+  }
+}
+
+class MySecondWidget extends StatefulWidget {
+  @override
+  _MySecondWidgetState createState() => _MySecondWidgetState();
+}
+
+class _MySecondWidgetState extends State<MySecondWidget> {
+  int buildCounter = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    print('MySecondWidget (build): ${++buildCounter}');
+    return Container(child: Center(child: Text('Hello (SF)')));
   }
 }
