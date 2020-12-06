@@ -117,8 +117,15 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class MyFirstWidget extends StatelessWidget {
+  Type contextRuntimeType;
+
+  Type getContextRuntimeType() {
+    return contextRuntimeType;
+  }
+
   @override
   Widget build(BuildContext context) {
+    contextRuntimeType = context.runtimeType;
     return Container(child: Center(child: Text('Hello (SL)')));
   }
 }
