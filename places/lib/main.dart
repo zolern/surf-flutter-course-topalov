@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MySecondWidget(),
     );
   }
 }
@@ -113,5 +113,31 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+}
+
+class MyFirstWidget extends StatelessWidget {
+  int buildCounter = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    buildCounter++;
+    print('MyFirstWidgetBuild: build ($buildCounter}');
+    return Container(child: Center(child: Text('Hello')));
+  }
+}
+
+class MySecondWidget extends StatefulWidget {
+  @override
+  _MySecondWidgetState createState() => _MySecondWidgetState();
+}
+
+class _MySecondWidgetState extends State<MySecondWidget> {
+  int buildCounter = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    print('MySecondWidget (build): ${++buildCounter}');
+    return Container(child: Center(child: Text('Hello (SF)')));
   }
 }
