@@ -136,11 +136,15 @@ class MySecondWidget extends StatefulWidget {
 }
 
 class _MySecondWidgetState extends State<MySecondWidget> {
-  int buildCounter = 0;
+  Type contextRuntimeType;
+
+  Type getContextRuntimeType() {
+    return contextRuntimeType;
+  }
 
   @override
   Widget build(BuildContext context) {
-    print('MySecondWidget (build): ${++buildCounter}');
+    contextRuntimeType = context.runtimeType;
     return Container(child: Center(child: Text('Hello (SF)')));
   }
 }
