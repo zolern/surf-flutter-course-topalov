@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
 }
 
 class MyApp extends StatelessWidget {
@@ -117,13 +117,16 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class MyFirstWidget extends StatelessWidget {
-  int buildCounter = 0;
+  Type contextRuntimeType;
+
+  Type getContextRuntimeType() {
+    return contextRuntimeType;
+  }
 
   @override
   Widget build(BuildContext context) {
-    buildCounter++;
-    print('MyFirstWidgetBuild: build ($buildCounter}');
-    return Container(child: Center(child: Text('Hello')));
+    contextRuntimeType = context.runtimeType;
+    return Container(child: Center(child: Text('Hello (SL)')));
   }
 }
 
@@ -133,11 +136,23 @@ class MySecondWidget extends StatefulWidget {
 }
 
 class _MySecondWidgetState extends State<MySecondWidget> {
-  int buildCounter = 0;
+  Type contextRuntimeType;
+
+  Type getContextRuntimeType() {
+    return contextRuntimeType;
+  }
 
   @override
   Widget build(BuildContext context) {
-    print('MySecondWidget (build): ${++buildCounter}');
+    contextRuntimeType = context.runtimeType;
     return Container(child: Center(child: Text('Hello (SF)')));
+  }
+}
+
+class App extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: MyFirstWidget(), title: 'My Flutter Demo 3.5');
   }
 }
