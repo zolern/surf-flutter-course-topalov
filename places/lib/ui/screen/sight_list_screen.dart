@@ -16,6 +16,14 @@ class _SightListScreenState extends State<SightListScreen> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      resizeToAvoidBottomInset: false,
+      body: Center(child: TextField()),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Btn1'),
+          BottomNavigationBarItem(icon: Icon(Icons.alarm), label: 'Btn2')
+        ],
+      ),
     );
   }
 }
