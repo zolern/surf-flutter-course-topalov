@@ -24,6 +24,26 @@ TextStyle _text = const TextStyle(
     textBold = _text.copyWith(fontWeight: FontWeight.w700),
 
 // AppBar
-    textAppBar = _text.copyWith(fontWeight: FontWeight.bold, fontSize: 32.0, height: 1.125),
-    textAppBarAccent1 = textAppBar.copyWith(color: colorAccent),
-    textAppBarAccent2 = textAppBar.copyWith(color: colorAccent2);
+    textAppBar = _text.copyWith(
+      fontWeight: FontWeight.bold,
+      fontSize: 32.0,
+      height: 1.125,
+    ),
+
+// Sight
+    textSightImage = _text.copyWith(
+      color: textColorWhite,
+      fontWeight: FontWeight.w700,
+      fontSize: 14.0,
+      height: 1.29,
+    ),
+    textSightDesc1 = _text.copyWith(
+      color: textColorSecondary,
+      fontWeight: FontWeight.w500,
+      fontSize: 16.0,
+      height: 1.25,
+    ),
+    textSightDesc2 = textSightImage.copyWith(
+      color: textColorSecondary2,
+      fontWeight: FontWeight.w400,
+    );
