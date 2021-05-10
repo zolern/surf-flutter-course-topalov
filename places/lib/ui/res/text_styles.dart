@@ -7,6 +7,7 @@ TextStyle _text = const TextStyle(
       fontFamily: "Roboto",
       fontStyle: FontStyle.normal,
       color: textColorPrimary,
+      decoration: TextDecoration.none,
     ),
 
 //Light
@@ -46,4 +47,15 @@ TextStyle _text = const TextStyle(
     textSightDesc2 = textSightImage.copyWith(
       color: textColorSecondary2,
       fontWeight: FontWeight.w400,
+    ),
+    textDetailsTitle = textSightDesc1.copyWith(
+      fontWeight: FontWeight.w700,
+      fontSize: 24.0,
+      height: 1.2,
+    ),
+    textDetailsType = textSightImage.copyWith(
+      color: textColorSecondary,
+    ),
+    textDetailsDesc = textSightDesc2.copyWith(
+      color: textColorSecondary,
     );
