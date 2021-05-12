@@ -6,56 +6,63 @@ import 'package:places/ui/res/colors.dart';
 TextStyle _text = const TextStyle(
       fontFamily: "Roboto",
       fontStyle: FontStyle.normal,
-      color: textColorPrimary,
       decoration: TextDecoration.none,
     ),
 
-//Light
-    textLight = _text.copyWith(fontWeight: FontWeight.w300),
+// Large Title
 
-//Regular
-    textRegular = _text.copyWith(fontWeight: FontWeight.normal),
-    textRegular16 = textRegular.copyWith(fontSize: 16.0),
-
-//Medium
-    textMedium = _text.copyWith(fontWeight: FontWeight.w500),
-    textMedium20 = textMedium.copyWith(fontSize: 20.0),
-
-//Bold
-    textBold = _text.copyWith(fontWeight: FontWeight.w700),
-
-// AppBar
-    textAppBar = _text.copyWith(
-      fontWeight: FontWeight.bold,
-      fontSize: 32.0,
-      height: 1.125,
-    ),
-
-// Sight
-    textSightImage = _text.copyWith(
-      color: textColorWhite,
+    textLargeTitle = _text.copyWith(
       fontWeight: FontWeight.w700,
-      fontSize: 14.0,
-      height: 1.29,
+      fontSize: 32.0,
+      height: 1.12,
     ),
-    textSightDesc1 = _text.copyWith(
-      color: textColorSecondary,
+    textTitle = _text.copyWith(
+      fontWeight: FontWeight.bold,
+      fontSize: 24.0,
+      height: 1.20,
+    ),
+
+// Subtitle
+
+    textSubtitle = _text.copyWith(
+      fontWeight: FontWeight.w500,
+      fontSize: 18.0,
+      height: 1.33,
+    ),
+
+// Text
+
+    textText = _text.copyWith(
       fontWeight: FontWeight.w500,
       fontSize: 16.0,
       height: 1.25,
     ),
-    textSightDesc2 = textSightImage.copyWith(
-      color: textColorSecondary2,
+
+// Small
+
+    textSmall = _text.copyWith(
       fontWeight: FontWeight.w400,
+      fontSize: 14.0,
+      height: 1.29,
     ),
-    textDetailsTitle = textSightDesc1.copyWith(
+    textSmallBold = textSmall.copyWith(
       fontWeight: FontWeight.w700,
-      fontSize: 24.0,
-      height: 1.2,
     ),
-    textDetailsType = textSightImage.copyWith(
-      color: textColorSecondary,
+
+// Button
+
+    textButton = textSmallBold.copyWith(
+      letterSpacing: 1.5, // 0.03em
     ),
-    textDetailsDesc = textSightDesc2.copyWith(
-      color: textColorSecondary,
-    );
+
+// Styles with colors
+
+    textLargeTitle_Secondary = textLargeTitle.copyWith(color: textWHITESecondary),
+    textText_Secondary = textText.copyWith(color: textWHITESecondary),
+    textSmallBold_White = textSmallBold.copyWith(color: textWhite),
+    textSmallBold_Secondary = textSmallBold.copyWith(color: textWHITESecondary),
+    textSmall_Secondary = textSmall.copyWith(color: textWHITESecondary),
+    textSmall_Secondary2 = textSmall.copyWith(color: textWHITESecondary2),
+    textButton_Main = textButton.copyWith(color: textWHITEMain),
+    textButton_White = textButton.copyWith(color: textWhite),
+    textTitle_Secondary = textTitle.copyWith(color: textWHITESecondary);
