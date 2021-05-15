@@ -15,7 +15,7 @@ class SightDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topLeft,
-      color: bgDescription2,
+      color: bgDefault,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -40,7 +40,7 @@ Widget sightImage(Sight data) {
       height: 32,
       color: Colors.white,
       text: '<',
-      style: textDetailsTitle,
+      style: textButton_Main,
     ),
   );
 }
@@ -48,7 +48,6 @@ Widget sightImage(Sight data) {
 Widget sightDesc(Sight data) {
   return Container(
     color: Colors.transparent,
-    alignment: Alignment.topLeft,
     padding: EdgeInsets.all(16),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -56,36 +55,50 @@ Widget sightDesc(Sight data) {
       children: [
         Text(
           data.name,
-          style: textDetailsTitle,
+          style: textTitle_Secondary,
           textAlign: TextAlign.left,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
-        Text(
-          data.type,
-          style: textDetailsType,
-          textAlign: TextAlign.left,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
+        SizedBox(height: 2),
+        Wrap(
+          spacing: 16,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            Text(
+              data.type,
+              style: textSmallBold_Secondary,
+              textAlign: TextAlign.left,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              data.note,
+              style: textSmall_Secondary2,
+              textAlign: TextAlign.left,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            )
+          ],
         ),
         SizedBox(height: 24),
         Text(
           data.details,
-          style: textDetailsDesc,
+          style: textSmall_Secondary,
         ),
         SizedBox(height: 24),
         MockButton(
           height: 40,
           color: Colors.green,
           text: 'Построить маршрут'.toUpperCase(),
-          style: textSightImage,
+          style: textButton_White,
         ),
         SizedBox(height: 24),
         const Divider(
           thickness: 0.8,
           indent: 0,
           endIndent: 0,
-          color: lineInactiveBlack,
+          color: colorSemiSecondary2,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -94,12 +107,12 @@ Widget sightDesc(Sight data) {
             MockButton(
               height: 18,
               text: '[#] Запланировать',
-              style: textDetailsDesc,
+              style: textSmall_Secondary,
             ),
             MockButton(
               height: 18,
               text: '<3 В избранное',
-              style: textDetailsDesc,
+              style: textSmall_Secondary,
             ),
           ],
         )

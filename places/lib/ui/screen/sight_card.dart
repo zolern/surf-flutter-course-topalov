@@ -44,7 +44,7 @@ Widget sightImage(Sight data) {
       children: [
         Text(
           data.type,
-          style: textSightImage,
+          style: textSmallBold_White,
           textAlign: TextAlign.left,
         ),
         heartIcon(20),
@@ -63,25 +63,31 @@ Widget heartIcon(double size) {
 
 Widget sightDesc(Sight data) {
   return Container(
-    color: bgDescription, // Yellow
-    height: 92,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.zero,
+        topRight: Radius.zero,
+        bottomLeft: Radius.circular(16),
+        bottomRight: Radius.circular(16),
+      ),
+      color: bgBackground,
+    ),
     alignment: Alignment.topLeft,
     padding: EdgeInsets.all(16),
     child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           data.name,
-          style: textSightDesc1,
+          style: textText_Secondary,
           textAlign: TextAlign.left,
-          maxLines: 2,
         ),
+        SizedBox(height: 2),
         Text(
-          data.details,
-          style: textSightDesc2,
+          data.note,
+          style: textSmall_Secondary2,
           textAlign: TextAlign.left,
-          maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
       ],

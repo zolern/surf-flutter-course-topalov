@@ -31,14 +31,11 @@ class _SightListScreenState extends State<SightListScreen> {
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         title: Container(
-          child: RichText(
-            text: TextSpan(
-              text: widget.titleLine1,
-              style: textAppBar,
-              children: [
-                TextSpan(text: "\n${widget.titleLine2}", style: textAppBar),
-              ],
-            ),
+          child: Text(
+            '${widget.titleLine1}\n${widget.titleLine2}',
+            style: textLargeTitle_Secondary,
+            textAlign: TextAlign.left,
+            maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
           padding: EdgeInsets.fromLTRB(0.0, widget.paddingTop, 0.0, 16.0),
