@@ -10,6 +10,7 @@ import 'package:flutter/foundation.dart';
 
 class Sight {
   final String name;
+  final String note;
   final double lat, lon;
   final String url;
   final String details;
@@ -17,6 +18,7 @@ class Sight {
 
   Sight({
     @required this.name,
+    this.note = "",
     @required this.lat,
     @required this.lon,
     @required this.url,
