@@ -78,10 +78,18 @@ Widget sightDesc(Sight data) {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          data.name,
-          style: textText_Secondary,
-          textAlign: TextAlign.left,
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: 151,
+          ),
+          child: Container(
+            child: Text(
+              data.name,
+              style: textText_Secondary,
+              textAlign: TextAlign.left,
+            ),
+            color: Color(0xFFC4C4C4),
+          ),
         ),
         SizedBox(height: 2),
         Text(
