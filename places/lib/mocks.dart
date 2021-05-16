@@ -6,6 +6,7 @@ final List<Sight> mocks = [];
 void initMocks() {
   mocks.add(Sight(
     name: "Эрмитаж",
+    note: "закрыто до 20:00",
     lat: 59.939283168036454,
     lon: 30.311371595171224,
     url: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Winter_Palace_Panorama_4.jpg",
@@ -15,6 +16,7 @@ void initMocks() {
   ));
   mocks.add(Sight(
     name: "Московский цирк Никулина на Цветном бульваре",
+    note: "билеты только онлайн",
     lat: 55.7707564407173,
     lon: 37.62065306501727,
     url: "https://img.tourister.ru/files/2/5/9/8/6/0/5/7/clones/1140_759_fixedwidth.jpg",
@@ -25,7 +27,7 @@ void initMocks() {
     type: "цирк",
   ));
   mocks.add(Sight(
-    name: "Пирамида Хеопса",
+    name: "Пирамида Хеопса и Большой сфинкс",
     lat: 29.979480738485062,
     lon: 31.134223362971863,
     url: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Kheops-Pyramid.jpg",
@@ -36,6 +38,7 @@ void initMocks() {
   ));
   mocks.add(Sight(
     name: "Монте-карло",
+    note: "круглосуточно",
     lat: 43.739372732540566,
     lon: 7.428568449125964,
     url: "https://upload.wikimedia.org/wikipedia/commons/1/16/Casin%C3%B2_-_panoramio.jpg",
@@ -56,6 +59,7 @@ void initMocks() {
   ));
   mocks.add(Sight(
     name: "Площадь Бастилии",
+    note: "запрещена парковка между 09:00 и 18:00",
     lat: 48.853332389608994,
     lon: 2.3691332023980207,
     url: "https://upload.wikimedia.org/wikipedia/commons/4/4b/P1160484_Paris_IV-XI-XII_place_de_la_Bastille_rwk.jpg",
