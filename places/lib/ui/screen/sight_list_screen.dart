@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:places/ui/res/text_styles.dart';
 
 import 'sight_card.dart';
+
 import 'package:places/mocks.dart';
 
 class SightListScreen extends StatefulWidget {
   final String titleLine1 = "Список";
   final String titleLine2 = "интересных мест";
+  final double paddingTop = 40.0;
 
   SightListScreen({Key key}) : super(key: key);
 
@@ -24,11 +26,21 @@ class _SightListScreenState extends State<SightListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(
-        title: '${widget.titleLine1}\n${widget.titleLine2}',
-        titleStyle: textLargeTitle_Secondary,
-        padding: EdgeInsets.fromLTRB(16, 64, 16, 16),
-        height: 48,
+      appBar: AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
+        title: Container(
+          child: Text(
+            '${widget.titleLine1}\n${widget.titleLine2}',
+            style: textLargeTitle_Secondary,
+            textAlign: TextAlign.left,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+          padding: EdgeInsets.fromLTRB(0.0, widget.paddingTop, 0.0, 16.0),
+        ),
+        toolbarHeight: 88.0 + widget.paddingTop,
       ),
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
@@ -36,40 +48,8 @@ class _SightListScreenState extends State<SightListScreen> {
           runSpacing: 16,
           children: _cards,
         ),
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 0.0),
       ),
     );
   }
-}
-
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final double height;
-  final String title;
-  final TextStyle titleStyle;
-  final EdgeInsets padding;
-
-  const MyAppBar({
-    Key key,
-    this.height,
-    this.padding: const EdgeInsets.all(16),
-    this.title = "",
-    this.titleStyle,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.transparent,
-      child: Align(
-        alignment: Alignment.topLeft,
-        child: Padding(
-          padding: padding,
-          child: Text(title, style: titleStyle),
-        ),
-      ),
-    );
-  }
-
-  @override
-  Size get preferredSize => Size.fromHeight(height + padding.vertical);
 }
