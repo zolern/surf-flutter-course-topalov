@@ -18,6 +18,7 @@ class SightCard extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         sightImage(sight),
+        SizedBox(height: 16),
         sightDesc(sight),
       ],
     );
