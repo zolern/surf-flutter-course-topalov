@@ -6,8 +6,6 @@ details - описание достопримечательности
 type - тип достопримечательности.
 */
 
-import 'package:flutter/foundation.dart';
-
 class Sight {
   final String name;
   final String note;
@@ -17,12 +15,12 @@ class Sight {
   final String type;
 
   Sight({
-    @required this.name,
+    required this.name,
     this.note = "",
-    @required this.lat,
-    @required this.lon,
-    @required this.url,
-    @required this.details,
-    @required this.type,
+    required this.lat,
+    required this.lon,
+    required this.url,
+    required this.details,
+    required this.type,
   });
 }

@@ -10,7 +10,7 @@ class SightListScreen extends StatefulWidget {
   final String titleLine2 = "интересных мест";
   final double paddingTop = 40.0;
 
-  SightListScreen({Key key}) : super(key: key);
+  SightListScreen({Key? key}) : super(key: key);
 
   @override
   _SightListScreenState createState() => _SightListScreenState();

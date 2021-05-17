@@ -121,7 +121,13 @@ Widget sightDesc(Sight data) {
   );
 }
 
-Widget MockButton({double width, double height, Color color: Colors.transparent, String text, TextStyle style}) {
+Widget MockButton({
+  double? width,
+  double? height,
+  Color color: Colors.transparent,
+  required String text,
+  TextStyle? style,
+}) {
   return Container(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(5),
