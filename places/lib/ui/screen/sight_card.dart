@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/animation/animations.dart';
 import 'package:places/ui/res/colors.dart';
 import 'package:places/ui/res/text_styles.dart';
 import 'package:places/ui/res/decorations.dart';
@@ -40,6 +41,19 @@ Widget sightImage(Sight data) {
             fit: BoxFit.cover,
             color: Colors.black.withOpacity(0.4),
             colorBlendMode: BlendMode.multiply,
+            loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+              return (loadingProgress == null)
+                  ? child
+                  : Align(
+                      alignment: Alignment.center,
+                      child: CircularProgressIndicator(
+                        value: loadingProgress.cumulativeBytesLoaded / (loadingProgress.expectedTotalBytes ?? 1),
+                        valueColor: AlwaysStoppedAnimation<Color>(colorWHITEAccent),
+                        backgroundColor: Colors.transparent,
+                        strokeWidth: 6,
+                      ),
+                    );
+            },
           ),
         ),
         Positioned(
