@@ -63,6 +63,7 @@ TextStyle _text = const TextStyle(
     textSmallBold_Secondary = textSmallBold.copyWith(color: textWHITESecondary),
     textSmall_Secondary = textSmall.copyWith(color: textWHITESecondary),
     textSmall_Secondary2 = textSmall.copyWith(color: textWHITESecondary2),
+    textSmall_Inactive = textSmall.copyWith(color: textWHITEInactive),
     textButton_Main = textButton.copyWith(color: textWHITEMain),
     textButton_White = textButton.copyWith(color: textWhite),
     textTitle_Secondary = textTitle.copyWith(color: textWHITESecondary);
