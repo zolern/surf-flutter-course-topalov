@@ -1,8 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:places/ui/res/text_styles.dart';
 import 'package:places/ui/res/colors.dart';
+import 'package:places/ui/res/text_styles.dart';
+import 'package:places/ui/res/decorations.dart';
 
 import 'package:places/domain/sight.dart';
 
@@ -27,49 +26,50 @@ class SightCard extends StatelessWidget {
 Widget sightImage(Sight data) {
   return Container(
     decoration: BoxDecoration(
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(16),
-        topRight: Radius.circular(16),
-        bottomLeft: Radius.zero,
-        bottomRight: Radius.zero,
-      ),
-      color: _getRandomColor(),
+      borderRadius: borderTopRounded,
+      gradient: bgLinearGradient,
     ),
     height: 96,
-    alignment: Alignment.topLeft,
-    padding: EdgeInsets.all(16),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
+    child: Stack(
+      fit: StackFit.expand,
       children: [
-        Text(
-          data.type,
-          style: textSmallBold_White,
-          textAlign: TextAlign.left,
+        ClipRRect(
+          borderRadius: borderTopRounded,
+          child: Image.network(
+            data.url,
+            fit: BoxFit.cover,
+            color: Colors.black.withOpacity(0.4),
+            colorBlendMode: BlendMode.multiply,
+          ),
         ),
-        heartIcon(20),
+        Positioned(
+          top: 16,
+          left: 16,
+          child: Text(
+            data.type,
+            style: textSmallBold_White,
+            textAlign: TextAlign.left,
+          ),
+        ),
+        Positioned(
+          top: 16,
+          right: 16,
+          child: Image.asset(
+            'res/images/icon_heart.png',
+            width: 24,
+            height: 24,
+            fit: BoxFit.fill,
+          ),
+        )
       ],
     ),
-  );
-}
-
-Widget heartIcon(double size) {
-  return Container(
-    height: size,
-    width: size,
-    color: Colors.red,
   );
 }
 
 Widget sightDesc(Sight data) {
   return Container(
     decoration: BoxDecoration(
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.zero,
-        topRight: Radius.zero,
-        bottomLeft: Radius.circular(16),
-        bottomRight: Radius.circular(16),
-      ),
+      borderRadius: borderBottomRounded,
       color: bgBackground,
     ),
     alignment: Alignment.topLeft,
@@ -93,9 +93,4 @@ Widget sightDesc(Sight data) {
       ],
     ),
   );
-}
-
-Color _getRandomColor() {
-  int _RandomInt(int min, int max) => Random().nextInt(max - min + 1);
-  return Color.fromARGB(0xff, _RandomInt(0x80, 0xff), _RandomInt(0x80, 0xff), _RandomInt(0x80, 0xff));
 }
