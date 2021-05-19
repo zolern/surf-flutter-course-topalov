@@ -7,10 +7,11 @@ const Color textWHITEGreen = _green,
     textWHITEMain = _luckyPoint,
     textWHITESecondary = _blueZodiac,
     textWHITESecondary2 = _slateGrey,
+    textWHITEInactive = _slateGreySemiTransparent,
     textWhite = _white,
     textBLACKMain = _blackRussian;
 
-const Color colorWHITEAccent = _green, colorSemiSecondary2 = _slateGreySemiTransparent; //0.56 opacity Slate Grey
+const Color colorWHITEAccent = _green;
 
 const Color bgBackground = _whiteSmoke, bgDefault = _white;
 
@@ -18,8 +19,8 @@ const LinearGradient bgLinearGradient = const LinearGradient(
   begin: Alignment.topCenter,
   end: Alignment.bottomCenter,
   colors: [
-    _luckyPoint, // #252849 at 100%
-    _blueZodiacTransparent, // #3B3E5B at 8%
+    _luckyPoint,
+    _blueZodiacTransparent,
   ],
 );
 
